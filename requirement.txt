@@ -1,0 +1,6 @@
+relation user with country
+login user with social media
+remember me in login 
+set up desgin
+search for new feature
+
