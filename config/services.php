@@ -30,18 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-
     'sparkpost' => [
         'secret' => env('SPARKPOST_SECRET'),
     ],
-    'github' => [
-        'client_id' => env('GITHUB_CLIENT_ID'), //Facebook API
-        'client_secret' => env('GITHUB_CLIENT_SECRET'), //Facebook Secret
-        'redirect' => env('GITHUB_REDIRECT_URL'),
-    ],
-    'google' => [
-        'client_id' => env('GOOGLE_CLIENT_ID'), //Facebook API
-        'client_secret' => env('GOOGLE_CLIENT_SECRET'), //Facebook Secret
-        'redirect' => env('GOOGLE_REDIRECT_URL'),
-    ],
+
 ];
