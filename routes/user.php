@@ -27,8 +27,9 @@ Route::group(['prefix'  =>  'user'], function () {
         Route::get('/logout', 'User\UserController@logout')->name('user.logout');
         Route::get('/dashboard', 'User\UserController@dashboard')->name('user.dashboard');
         Route::get('/change-password', 'User\UserController@change_password')->name('user.change-password');
+        Route::get('/order', 'User\UserController@MyOrder')->name('user.order');
         Route::POST('/save-change-password', 'User\UserController@save_change_password')->name('user.save-change-password');
-
+        Route::get('/my-favourite', 'User\UserController@my_favourite')->name('user.my-favourite');
     });
 
 

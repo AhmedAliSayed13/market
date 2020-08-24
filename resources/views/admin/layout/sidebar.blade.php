@@ -37,6 +37,20 @@
                         <li class="{{active_link(['admin','product'])}}"><a href="{{route('product.index')}}"> All Products </a></li>
                     </ul>
                 </li>
+                <li class="submenu">
+                    <a href="#"><i class="fe fe-document"></i> <span> Voucher </span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li class="{{active_link(['admin','voucher','create'])}}"><a href="{{route('voucher.create')}}"> New Voucher </a></li>
+                        <li class="{{active_link(['admin','voucher'])}}"><a href="{{route('voucher.index')}}"> All Vouchers </a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="fe fe-document"></i> <span> Order </span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li class="{{active_link(['admin','order','create'])}}"><a href="{{route('order.create')}}"> New Order </a></li>
+                        <li class="{{active_link(['admin','order'])}}"><a href="{{route('order.index')}}"> All Orders </a></li>
+                    </ul>
+                </li>
 
                 <li class="submenu">
                     <a href="javascript:void(0);"><i class="fe fe-code"></i> <span>Multi Level</span> <span class="menu-arrow"></span></a>

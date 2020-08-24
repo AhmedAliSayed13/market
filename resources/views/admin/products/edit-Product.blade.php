@@ -1,10 +1,7 @@
 @extends('admin.layout.index')
 @section('content')
-
     <!-- Page Wrapper -->
-
         <div class="content container-fluid">
-
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row">
@@ -171,11 +168,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     <!-- /Main Wrapper -->
-
-@stop
-
-
+@endsection

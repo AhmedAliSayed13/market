@@ -19,6 +19,11 @@ class DatabaseSeeder extends Seeder
         //$this->call(TagsTableSeeder::class);
        // $this->call(ProudctsTableSeeder::class);
        // $this->call(ProductimagesTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
+        //$this->call(UsersTableSeeder::class);
+        //$this->call(product_attributesTableSeeder::class);
+        //$this->call(CommentsTableSeeder::class);
+        //$this->call(VouchersTableSeeder::class);
+        //$this->call(OrdersTableSeeder::class);
+        $this->call(Producr_ordersTableSeeder::class);
     }
 }

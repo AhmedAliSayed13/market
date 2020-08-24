@@ -3,7 +3,7 @@
 <!-- Favicon-->
 <link rel="shortcut icon" href="{{asset("")}}main/img/fav.png">
 <!-- Author Meta -->
-<meta name="csrf-token" content="{{ csrf_token() }}" />
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="author" content="CodePixar">
 <!-- Meta Description -->
 <meta name="description" content="">
@@ -26,10 +26,25 @@
 <link rel="stylesheet" href="{{asset("")}}main/css/magnific-popup.css">
 <link rel="stylesheet" href="{{asset("")}}main/css/main.css">
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<style>
+    .checked {
+        color: orange;
+    }
+</style>
 <style>
     .liked{
         background:-webkit-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%)!important;
         background: linear-gradient(90deg, #ffba00 0%, #ff6c00 100%)!important;
     }
-
+    .page-item.disabled .page-link,.page-item.active .page-link{
+        height: 100%!important;
+        padding:.5rem .75rem!important;
+    }
+    .pagination{
+        border-left: none!important;
+    }
+    .pagination a{
+        line-height: 19px!important;
+    }
 </style>

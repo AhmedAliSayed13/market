@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Models\Order;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -38,6 +40,19 @@ class UserController extends Controller
         $message="Updated Password successfully";
         return redirect()->back()->with('success', $message);
 
+
+    }
+    public function MyOrder() {
+
+        $orders=Order::where('user_id','=',auth()->user()->id)->get();
+        return view('user.my-order',compact('orders'));
+
+    }
+    public function my_favourite() {
+
+        $products=auth()->user()->wishlists;
+
+        return view('user.my-favourite',compact('products'));
 
     }
     public function logout() {

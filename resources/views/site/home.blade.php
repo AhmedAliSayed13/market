@@ -190,7 +190,7 @@
                             <div class="single-product">
                                 <img class="img-fluid" src="{{asset("")}}images_upload/{{$product->defaultImage()}}" alt="">
                                 <div class="product-details">
-                                    <h6>{{$product->name}}</h6>
+                                    <h6>{{show_title($product->name) }}</h6>
                                     <div class="price">
                                         <h6>${{$product->price}}</h6>
                                         <h6 class="l-through">${{$product->discount}}</h6>
@@ -199,25 +199,22 @@
 
 
 
-                                            <form STYLE="display: inline" method="post" action="{{route('add.card')}}">
-                                                @csrf
-
-                                                <input name="id" type="hidden" value="{{$product->id}}">
-                                                <input name="name" type="hidden" value="{{$product->name}}">
-                                                <input name="price" type="hidden" value="{{$product->price}}">
-                                                <input name="quantity" type="hidden" value="1">
-                                                <button  type="submit" style="cursor: pointer;text-align: left;background-color: transparent!important;border-color: transparent!important;" >
-
-                                                    <a  class="social-info">
+                                        <form STYLE="display: inline" method="post" action="{{route('add.card')}}">
+                                            @csrf
+                                            <input name="id" type="hidden" value="{{$product->id}}">
+                                            <input name="name" type="hidden" value="{{$product->name}}">
+                                            <input name="price" type="hidden" value="{{$product->price}}">
+                                            <input name="quantity" type="hidden" value="1">
+                                            <button @if(auth()->check()) type="submit" @else onclick="showlogin()" @endif style="cursor: pointer;text-align: left;background-color: transparent!important;border-color: transparent!important;"  >
+                                                <a href="#"  class="social-info">
                                                     <p class="hover-text">add to bag</p>
                                                     <span class="ti-bag"></span>
-                                                    </a>
-                                                </button>
+                                                </a>
+                                            </button>
+                                        </form>
 
-                                            </form>
 
-
-                                        <a style="cursor: pointer;" onclick="wishlist({{$product->id}})" class="social-info ">
+                                        <a style="cursor: pointer;" @if(auth()->check()) onclick="wishlist({{$product->id}})" @else onclick="showlogin()" @endif class="social-info ">
                                             <span id="wishlist-{{$product->id}}" class="lnr lnr-heart {{ ($product->checkLiked()  === true) ? 'liked' : '' }}"></span>
                                             <p class="hover-text">Wishlist</p>
                                         </a>
@@ -245,9 +242,7 @@
 					<div class="col-lg-6 text-center">
 						<div class="section-title">
 							<h1>Coming Products</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore
-								magna aliqua.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  magna aliqua.</p>
 						</div>
 					</div>
 				</div>
@@ -258,39 +253,47 @@
 						<div class="single-product">
 							<img class="img-fluid" src="{{asset("")}}images_upload/{{$comingProduct->defaultImage()}}" alt="">
 							<div class="product-details">
-                                <h6>{{$comingProduct->name}}</h6>
+                                <h6>{{show_title($comingProduct->name) }}</h6>
 								<div class="price">
 									<h6>{{$comingProduct->price}}</h6>
 									<h6 class="l-through">${{$product->discount}}</h6>
 								</div>
-								<div class="prd-bottom">
 
-									<a href="" class="social-info">
-										<span class="ti-bag"></span>
-										<p class="hover-text">add to bag</p>
-									</a>
-									<a href="" class="social-info">
-										<span class="lnr lnr-heart"></span>
-                                        <form method="post" action="{{route('add.card')}}">
-                                            @csrf
-                                            <input name="id" type="hidden" value="{{$product->id}}">
-                                            <input name="name" type="hidden" value="{{$product->name}}">
-                                            <input name="price" type="hidden" value="{{$product->price}}">
-                                            <input name="quantity" type="hidden" value="1">
-                                        </form>
-										<p class="hover-text">Wishlist</p>
-									</a>
 
-									<a href="{{url('single-product/'.$product->id)}}" class="social-info">
-										<span class="lnr lnr-eye"></span>
-										<p class="hover-text">More Details</p>
-									</a>
-									<a href="" class="social-info">
-										<span class="lnr lnr-move"></span>
-										<p class="hover-text">view more</p>
-									</a>
-								</div>
-							</div>
+                                <div class="prd-bottom">
+
+
+
+                                    <form STYLE="display: inline" method="post" action="{{route('add.card')}}">
+                                        @csrf
+                                        <input name="id" type="hidden" value="{{$product->id}}">
+                                        <input name="name" type="hidden" value="{{$product->name }}">
+                                        <input name="price" type="hidden" value="{{$product->price}}">
+                                        <input name="quantity" type="hidden" value="1">
+                                        <button @if(auth()->check()) type="submit" @else onclick="showlogin()" @endif style="cursor: pointer;text-align: left;background-color: transparent!important;border-color: transparent!important;"  >
+                                            <a href="#"  class="social-info">
+                                                <p class="hover-text">add to bag</p>
+                                                <span class="ti-bag"></span>
+                                            </a>
+                                        </button>
+                                    </form>
+
+
+                                    <a style="cursor: pointer;" @if(auth()->check()) onclick="wishlist({{$product->id}})" @else onclick="showlogin()" @endif class="social-info ">
+                                        <span id="wishlist-{{$product->id}}" class="lnr lnr-heart {{ ($product->checkLiked()  === true) ? 'liked' : '' }}"></span>
+                                        <p class="hover-text">Wishlist</p>
+                                    </a>
+                                    <a style="cursor: pointer;" href="{{url('single-product/'.$product->id)}}" class="social-info">
+                                        <span class="lnr lnr-eye"></span>
+                                        <p class="hover-text">More Details</p>
+                                    </a>
+                                    <a style="cursor: pointer;" href="{{route('search')}}" class="social-info">
+                                        <span class="lnr lnr-move"></span>
+                                        <p class="hover-text">view more</p>
+                                    </a>
+                                </div>
+
+                            </div>
 						</div>
 					</div>
 					<!-- single product -->
@@ -345,11 +348,20 @@
                                     <h6>${{$productFeature->price}}</h6>
                                     <h6 class="l-through">${{$productFeature->discount}}</h6>
                                 </div>
-                                <h4>{{$productFeature->name}}</h4>
-                                <div class="add-bag d-flex align-items-center justify-content-center">
-                                    <a class="add-btn" href=""><span class="ti-bag"></span></a>
+                                <h4>{{show_title($productFeature->name) }}</h4>
+                                <form STYLE="display: inline" method="post" action="{{route('add.card')}}">
+                                    @csrf
+                                    <input name="id" type="hidden" value="{{$product->id}}">
+                                    <input name="name" type="hidden" value="{{ $product->name}}">
+                                    <input name="price" type="hidden" value="{{$product->price}}">
+                                    <input name="quantity" type="hidden" value="1">
+
+
+                                <button style="margin-left: auto;margin-right:auto;cursor: pointer;text-align: left;background-color: transparent!important;border-color: transparent!important;" type="submit" class="add-bag d-flex align-items-center justify-content-center">
+                                    <b type="submit" class="add-btn" href=""><span class="ti-bag"></span></b>
                                     <span class="add-text text-uppercase">Add to Bag</span>
-                                </div>
+                                </button>
+                                </form>
                             </div>
                         </div>
                         <!-- single exclusive carousel -->
@@ -396,7 +408,7 @@
 							<div class="single-related-product d-flex">
 								<a href="#"><img width="70px" height="70px" src="{{asset("")}}images_upload/{{$dealProduct->defaultImage()}}" alt=""></a>
 								<div class="desc">
-									<a href="#" class="title">{{$dealProduct->name}}</a>
+									<a href="#" class="title">{{show_title($dealProduct->name) }}</a>
 									<div class="price">
 										<h6>${{$dealProduct->price}}</h6>
 										<h6 class="l-through">${{$dealProduct->discount}}</h6>
@@ -429,21 +441,9 @@
 
         });
 
-           function wishlist($id) {
-               $.ajax({
-                   type:'GET',
-                   url: 'wishlist/'+$id,
-                   success:function(data) {
-                      if(data){
-                          $('span#wishlist-'+$id).addClass('liked');
-                      }
-                      else{
-                          $('span#wishlist-'+$id).removeClass('liked');
-                      }
-                   }
 
-               });
-           }
+
+
 
     </script>
     @endsection

@@ -4,11 +4,12 @@ namespace  App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Actuallymab\LaravelComment\CanComment;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use BeyondCode\Vouchers\Traits\CanRedeemVouchers;
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable ,CanComment,CanRedeemVouchers;
 
     /**
      * The attributes that are mass assignable.
@@ -36,4 +37,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+    public function wishlists()
+    {
+        return $this->belongsToMany(Product::class,'wishlists');
+    }
 }

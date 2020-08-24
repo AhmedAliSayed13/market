@@ -860,6 +860,9 @@ button.bg-danger:hover {
 .pagination > li > span {
 	color: #00d0f1;
 }
+.pagination {
+	border-left: none!important;
+}
 .page-link:hover {
 	color: #00d0f1;
 }
@@ -4216,4 +4219,7 @@ table.table-inbox tbody tr.checked {
 }
 .upload-wrap .upload-images + .upload-images {
     margin-left: 20px;
+}
+.page-item.disabled .page-link{
+    height: 100%;
 }

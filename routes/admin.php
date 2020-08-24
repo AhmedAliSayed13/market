@@ -30,6 +30,9 @@ Route::group(['prefix'  =>  'admin'], function () {
         Route::resource('category','Admin\CategoryController');
         Route::resource('tag','Admin\TagController');
         Route::resource('product','Admin\ProductController');
+        Route::resource('voucher','Admin\VoucherController');
+        Route::resource('order','Admin\OrderController');
+        Route::post('/product-store-attribute', 'Admin\ProductController@product_store_attribute')->name('product.store.attribute');
     });
 
     // Password Reset Routes...

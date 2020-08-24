@@ -26,24 +26,7 @@
                                 <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">Blog</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">Pages</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="tracking.html">Tracking</a></li>
-                                <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
                         @if(Auth::check())
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -59,7 +42,15 @@
                         @endif
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="#" class="cart"><span class="ti-bag mr-1 ml-1"> {{ $cartCount }} </span></a></li>
+                        
+                                @if(auth()->check())
+                                <li class="nav-item"><a href="{{route('card.page')}}" class="cart"><span class="ti-bag mr-1 ml-1">
+                                    {{ $cartCount }}
+                                 @else
+                                 <li class="nav-item"><a href="#" class="cart"><span class="ti-bag mr-1 ml-1">
+                                    0
+                                @endif
+                                </span></a></li>
                         <li class="nav-item">
                             <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
                         </li>

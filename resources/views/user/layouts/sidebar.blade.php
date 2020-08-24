@@ -23,6 +23,24 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                <li class="{{active_link(['user','change-password'])}}">
+                    <a href="{{route('user.change-password')}}">
+                        <i class="fas fa-columns"></i>
+                        <span>Profile Settings</span>
+                    </a>
+                </li>
+                <li class="{{active_link(['user','order'])}}">
+                    <a href="{{route('user.order')}}">
+                        <i class="fas fa-columns"></i>
+                        <span>My Orders</span>
+                    </a>
+                </li>
+                <li class="{{active_link(['user','my-favourite'])}}">
+                    <a href="{{route('user.my-favourite')}}">
+                        <i class="fas fa-columns"></i>
+                        <span>Favourite Product</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="{{route('user.logout')}}">

@@ -180,6 +180,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\SettingsServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
+        \Actuallymab\LaravelComment\LaravelCommentServiceProvider::class
     ],
 
     /*

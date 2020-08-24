@@ -10,6 +10,8 @@
 <script src="{{asset('/js/jquery.fancybox.min.js')}}"></script>
 <!-- Custom JS -->
 <script  src="{{asset('js/script.js')}}"></script>
+<script  src="{{asset('js/mask.js')}}"></script>
+<script  src="{{asset('js/jquery.maskedinput.min.js')}}"></script>
 <!-- DataTables -->
 <script src="{{asset('/js/jquery.dataTables.min.js')}}"></script>
 <!-- Bootstrap Tagsinput JS -->

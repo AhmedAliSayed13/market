@@ -3,9 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Actuallymab\LaravelComment\Contracts\Commentable;
+use Actuallymab\LaravelComment\HasComments;
+use BeyondCode\Vouchers\Traits\HasVouchers;
 
-class Product extends Model
+class Product  extends Model implements Commentable
 {
+    use HasComments,HasVouchers;
+    public function canBeRated(): bool
+    {
+        return true; // default false
+    }
     public function brand()
     {
         return $this->belongsTo('App\Models\Brand');
@@ -21,6 +29,12 @@ class Product extends Model
     public function tags()
     {
         return $this->belongsToMany('App\Models\Tag','proudcttags');
+    }
+
+    public function attributes()
+    {
+        return $this->hasMany('App\Models\Product_attribute');
+
     }
     public function defaultImage()
     {
@@ -38,10 +52,21 @@ class Product extends Model
     }
     public function checkLiked()
     {
-        $item=Wishlist::where('user_id','=',auth()->user()->id)->where('product_id','=',$this->id)->first();
-        if(empty($item)){
-            return false;
+        if (auth()->check())
+        {
+                $item = Wishlist::where('user_id', '=', auth()->user()->id)->where('product_id', '=', $this->id)->first();
+            if (empty($item)) {
+                return false;
+            }
+            return true;
         }
-        return true;
+    }
+    public function vouchers()
+    {
+        return $this->hasMany('App\Models\Voucher');
+    }
+    public function order_products()
+    {
+        return $this->hasMany(Order_product::class);
     }
 }

@@ -26,5 +26,14 @@ if(!function_exists('active_select')){
 
     }
 }
+if(!function_exists('show_title')){
+    function show_title($title){
+        if(strlen($title)>25){
+            return str_limit($title, $limit = 25, $end = '...');
+        }
+        return $title;
+
+    }
+}
 
 

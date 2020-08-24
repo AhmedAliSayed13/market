@@ -8,10 +8,12 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 
+use App\Models\Product_attribute;
 use App\Models\Productimage;
 use App\Models\Proudcttag;
 use App\Models\Tag;
 use Cart;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -24,9 +26,10 @@ class ProductController extends Controller
 
     public function create()
     {
+        $step=1;
         $brands=Brand::all();
         $categories=Category::all();
-        return view('admin.products.create-Product',compact('brands','categories'));
+        return view('admin.products.create-Product',compact('brands','categories','step'));
     }
 
     public function store(Request $request)
@@ -63,7 +66,69 @@ class ProductController extends Controller
             $producttage->tag_id=$tag->id;
             $producttage->save();
         }
-        return Redirect::back()->with(['success'=>'Created Account Product Successfully','id' => $product->id]);
+        $product_id=$product->id;
+        $step=2;
+        return view('admin.products.create-Product',compact('step','product_id'));
+        //return Redirect::back()->with(['success'=>'Created Account Product Successfully','id' => $product->id]);
+    }
+    public function product_store_attribute(Request $request)
+    {
+        $validatedData = $request->validate([
+            'color'=>['nullable','string'],
+            'size'=>['nullable','integer'],
+            'width'=>['nullable','integer'],
+            'height'=>['nullable','integer'],
+            'depth'=>['nullable','integer'],
+            'weight'=>['nullable','integer'],
+            'step'=>['required'],
+            'product_id'=>['required'],
+        ]);
+        if(!empty($request->color)){
+            $attribute=new Product_attribute();
+            $attribute->product_id=$request->product_id;
+            $attribute->attribute_id=1;
+            $attribute->value=$request->color;
+            $attribute->save();
+        }
+        if(!empty($request->size)){
+            $attribute=new Product_attribute();
+            $attribute->product_id=$request->product_id;
+            $attribute->attribute_id=2;
+            $attribute->value=$request->size;
+            $attribute->save();
+        }
+        if(!empty($request->width)){
+            $attribute=new Product_attribute();
+            $attribute->product_id=$request->product_id;
+            $attribute->attribute_id=3;
+            $attribute->value=$request->width;
+            $attribute->save();
+        }
+        if(!empty($request->height)){
+            $attribute=new Product_attribute();
+            $attribute->product_id=$request->product_id;
+            $attribute->attribute_id=4;
+            $attribute->value=$request->height;
+            $attribute->save();
+        }
+        if(!empty($request->weight)){
+            $attribute=new Product_attribute();
+            $attribute->product_id=$request->product_id;
+            $attribute->attribute_id=5;
+            $attribute->value=$request->weight;
+            $attribute->save();
+        }
+        if(!empty($request->depth)){
+            $attribute=new Product_attribute();
+            $attribute->product_id=$request->product_id;
+            $attribute->attribute_id=6;
+            $attribute->value=$request->depth;
+            $attribute->save();
+        }
+        $step=3;
+        $product_id=$request->product_id;
+        $images=Product::find($product_id)->images;
+        return view('admin.products.create-Product',compact('step','product_id','images'));
     }
     function upload_image(Request $request)
     {
@@ -74,7 +139,7 @@ class ProductController extends Controller
         $product_image->image=$imageName;
         $product_image->product_id=$request->id;
         $product_image->save();
-        return Redirect::back()->with('success', 'Updated Product Images Successfully');
+        return Redirect::back()->with('success', 'Added Product Images Successfully');
     }
     function delete_image(Request $request)
     {
@@ -136,18 +201,8 @@ class ProductController extends Controller
         $product->delete();
         return Redirect::back()->with('success', 'Deleted Product Successfully');
     }
-    public function addCart(Request $request)
-    {
-        $product =Product::find($request->input('id'));
-        if(empty($product)) {
-            return redirect()->back()->with('error', 'Item Not Found');
-        }
-        $options = $request->except('_token', 'id', 'price', 'quantity');
 
-        Cart::add(uniqid(), $product->name, $request->input('price'), $request->input('quantity'), $options);
 
-        return redirect()->back()->with('message', 'Item added to cart successfully.');
-    }
 
 }
 
