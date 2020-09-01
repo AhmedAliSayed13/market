@@ -1,0 +1,14 @@
+<?php
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\Model;
+use Faker\Generator as Faker;
+
+$factory->define(\App\Models\Proudctimage::class, function (Faker $faker) {
+    return [
+        'image' => 'product.png',
+        'product_id' => $faker->unique()->numberBetween(1,100),
+
+    ];
+});
