@@ -12,6 +12,6 @@ class ProductimagesTableSeeder extends Seeder
     public function run()
     {
         $count = 100;
-        factory(\App\Models\Proudctimage::class, $count)->create();
+        factory(\App\Models\Productimage::class, $count)->create();
     }
 }
