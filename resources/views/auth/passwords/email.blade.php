@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
     <!-- Favicons -->
-    <link href="{{asset('site/img/favicon.png')}}" rel="icon">
+    <link href="{{secure_asset('site/img/favicon.png')}}" rel="icon">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('site/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('site/css/bootstrap.min.css')}}">
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="{{asset('site/plugins/fontawesome/css/fontawesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('site/plugins/fontawesome/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('site/plugins/fontawesome/css/fontawesome.min.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('site/plugins/fontawesome/css/all.min.css')}}">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{asset('site/css/style.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('site/css/style.css')}}">
 
 </head>
 <body class="account-page">

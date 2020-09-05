@@ -56,7 +56,7 @@
                         <td>
                             <div class="media">
                                 <div class="d-flex">
-                                    <img height="50px" src="{{asset('')}}images_upload/{{$card->associatedModel['image']}}" alt="">
+                                    <img height="50px" src="{{secure_asset('')}}images_upload/{{$card->associatedModel['image']}}" alt="">
                                 </div>
                                 <div class="media-body">
                                     <p>{{$card->name}}</p>

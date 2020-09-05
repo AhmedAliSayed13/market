@@ -113,7 +113,7 @@
                             <div class='col-lg-4 col-md-6'>
 
                                 <div class='single-product float-left'>
-                                    <img class='img-fluid' style="height: 191px!important;" src='{{asset("")}}images_upload/{{$product->defaultImage()}}' >
+                                    <img class='img-fluid' style="height: 191px!important;" src='{{secure_asset("")}}images_upload/{{$product->defaultImage()}}' >
                                     <div class='product-details'>
                                         <h6>{{show_title($product->name)}}</h6>
                                         <div class="price">

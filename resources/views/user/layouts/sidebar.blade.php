@@ -3,7 +3,7 @@
     <div class="widget-profile pro-widget-content">
         <div class="profile-info-widget">
             <a href="#" class="booking-doc-img">
-                <img src="{{asset('')}}site/upload_img/{{auth()->user()->image}}" alt="User Image">
+                <img src="{{secure_asset('')}}site/upload_img/{{auth()->user()->image}}" alt="User Image">
             </a>
             <div class="profile-det-info">
                 <h3>{{auth()->user()->name}}</h3>
