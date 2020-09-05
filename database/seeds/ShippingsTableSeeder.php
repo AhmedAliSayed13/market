@@ -11,7 +11,7 @@ class ShippingsTableSeeder extends Seeder
      */
     public function run()
     {
-        $count = 100;
+        $count = 3;
         factory(\App\Models\Shipping::class, $count)->create();
     }
 }
