@@ -9,13 +9,13 @@
                     <!-- Blog Post -->
                     <div class="blog grid-blog">
                         <div class="blog-image">
-                            <a href="blog-details.html"><img class="img-fluid" src="{{secure_asset('')}}images_upload/{{$product->defaultImage()}}" alt="Post Image"></a>
+                            <a href="blog-details.html"><img class="img-fluid" src="{{asset('')}}images_upload/{{$product->defaultImage()}}" alt="Post Image"></a>
                         </div>
                         <div class="blog-content">
                             <ul class="entry-meta meta-item">
                                 <li>
                                     <div class="post-author">
-                                        <a href="doctor-profile.html"><img src="{{secure_asset('')}}site/upload_img/{{auth()->user()->image}}" alt="Post Author"> <span>{{auth()->user()->name}}</span></a>
+                                        <a href="doctor-profile.html"><img src="{{asset('')}}site/upload_img/{{auth()->user()->image}}" alt="Post Author"> <span>{{auth()->user()->name}}</span></a>
                                     </div>
                                 </li>
                             </ul>

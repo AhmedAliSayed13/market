@@ -43,14 +43,14 @@
                 <div class="single-footer-widget mail-chimp">
                     <h6 class="mb-20">Instragram Feed</h6>
                     <ul class="instafeed d-flex flex-wrap">
-                        <li><img src="{{secure_asset("")}}main/img/i1.jpg" alt=""></li>
-                        <li><img src="{{secure_asset("")}}main/img/i2.jpg" alt=""></li>
-                        <li><img src="{{secure_asset("")}}main/img/i3.jpg" alt=""></li>
-                        <li><img src="{{secure_asset("")}}main/img/i4.jpg" alt=""></li>
-                        <li><img src="{{secure_asset("")}}main/img/i5.jpg" alt=""></li>
-                        <li><img src="{{secure_asset("")}}main/img/i6.jpg" alt=""></li>
-                        <li><img src="{{secure_asset("")}}main/img/i7.jpg" alt=""></li>
-                        <li><img src="{{secure_asset("")}}main/img/i8.jpg" alt=""></li>
+                        <li><img src="{{asset("")}}main/img/i1.jpg" alt=""></li>
+                        <li><img src="{{asset("")}}main/img/i2.jpg" alt=""></li>
+                        <li><img src="{{asset("")}}main/img/i3.jpg" alt=""></li>
+                        <li><img src="{{asset("")}}main/img/i4.jpg" alt=""></li>
+                        <li><img src="{{asset("")}}main/img/i5.jpg" alt=""></li>
+                        <li><img src="{{asset("")}}main/img/i6.jpg" alt=""></li>
+                        <li><img src="{{asset("")}}main/img/i7.jpg" alt=""></li>
+                        <li><img src="{{asset("")}}main/img/i8.jpg" alt=""></li>
                     </ul>
                 </div>
             </div>

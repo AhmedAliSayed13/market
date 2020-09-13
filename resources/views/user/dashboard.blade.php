@@ -9,7 +9,7 @@
                             <div class="dash-widget dct-border-rht">
                                 <div class="circle-bar circle-bar1">
                                     <div class="circle-graph1" data-percent="75">
-                                        <img src="{{secure_asset('')}}site/img/icon-01.png" class="img-fluid" alt="patient">
+                                        <img src="{{asset('')}}site/img/icon-01.png" class="img-fluid" alt="patient">
                                     </div>
                                 </div>
                                 <div class="dash-widget-info">
@@ -24,7 +24,7 @@
                             <div class="dash-widget dct-border-rht">
                                 <div class="circle-bar circle-bar2">
                                     <div class="circle-graph2" data-percent="65">
-                                        <img src="{{secure_asset('')}}site/img/icon-02.png" class="img-fluid" alt="Patient">
+                                        <img src="{{asset('')}}site/img/icon-02.png" class="img-fluid" alt="Patient">
                                     </div>
                                 </div>
                                 <div class="dash-widget-info">
@@ -39,7 +39,7 @@
                             <div class="dash-widget">
                                 <div class="circle-bar circle-bar3">
                                     <div class="circle-graph3" data-percent="50">
-                                        <img src="{{secure_asset('')}}site/img/icon-03.png" class="img-fluid" alt="Patient">
+                                        <img src="{{asset('')}}site/img/icon-03.png" class="img-fluid" alt="Patient">
                                     </div>
                                 </div>
                                 <div class="dash-widget-info">

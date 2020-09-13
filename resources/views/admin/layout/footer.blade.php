@@ -6,16 +6,16 @@
     <title>Doccure - Login</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{secure_asset('img/favicon.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon.png')}}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{secure_asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="{{secure_asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{secure_asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 
 </head>
@@ -27,7 +27,7 @@
         <div class="container">
             <div class="loginbox">
                 <div class="login-left">
-                    <img class="img-fluid" src="{{secure_asset('img/logo-white.png')}}" alt="Logo">
+                    <img class="img-fluid" src="{{asset('img/logo-white.png')}}" alt="Logo">
                 </div>
                 <div class="login-right">
                     <div class="login-right-wrap">
@@ -60,10 +60,10 @@
 <!-- /Main Wrapper -->
 
 <!-- jQuery -->
-<script src="{{secure_asset('js/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 
 <!-- Bootstrap Core JS -->
-<script src="{{secure_asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
 <!-- Custom JS -->
