@@ -15,7 +15,7 @@
 										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
 									<div class="add-bag d-flex align-items-center">
 										<a class="add-btn" href="{{route('search')}}"><span class="lnr lnr-unlink"></span></a>
-										<span class="add-text text-uppercase">Add to Bag</span>
+										<span class="add-text text-uppercase">More</span>
 									</div>
 								</div>
 							</div>
@@ -34,7 +34,7 @@
 										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
 									<div class="add-bag d-flex align-items-center">
                                         <a class="add-btn" href="{{route('search')}}"><span class="lnr lnr-unlink"></span></a>
-										<span class="add-text text-uppercase">Add to Bag</span>
+										<span class="add-text text-uppercase">More</span>
 									</div>
 								</div>
 							</div>
@@ -53,7 +53,7 @@
 										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
 									<div class="add-bag d-flex align-items-center">
                                         <a class="add-btn" href="{{route('search')}}"><span class="lnr lnr-unlink"></span></a>
-										<span class="add-text text-uppercase">Add to Bag</span>
+										<span class="add-text text-uppercase">More</span>
 									</div>
 								</div>
 							</div>
@@ -72,7 +72,7 @@
 										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
 									<div class="add-bag d-flex align-items-center">
                                         <a class="add-btn" href="{{route('search')}}"><span class="lnr lnr-unlink"></span></a>
-										<span class="add-text text-uppercase">Add to Bag</span>
+										<span class="add-text text-uppercase">More</span>
 									</div>
 								</div>
 							</div>
@@ -147,8 +147,8 @@
 						<div class="col-lg-8 col-md-8">
 							<div class="single-deal">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" style="height: 191px!important;" src="{{asset("")}}images_profile/{{$categories[0]->image }}" alt="">
-								<a href="{{asset("")}}images_profile/{{$categories[0]->image }}" class="img-pop-up" target="_blank">
+								<img class="img-fluid w-100" style="height: 191px!important;" src="{{asset("")}}main/img/category/c1.jpg" alt="">
+								<a href="{{asset("")}}main/img/category/c1.jpg" class="img-pop-up" target="_blank">
 									<div class="deal-details">
 										<h6 class="deal-title">{{$categories[0]->name }}</h6>
 									</div>
@@ -158,8 +158,8 @@
 						<div class="col-lg-4 col-md-4">
 							<div class="single-deal">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" style="height: 191px!important;" src="{{asset("")}}images_profile/{{$categories[1]->image }}" alt="">
-								<a href="{{asset("")}}images_profile/{{$categories[1]->image }}" class="img-pop-up" target="_blank">
+								<img class="img-fluid w-100" style="height: 191px!important;" src="{{asset("")}}main/img/category/c2.jpg" alt="">
+								<a href="{{asset("")}}main/img/category/c2.jpg" class="img-pop-up" target="_blank">
 									<div class="deal-details">
 										<h6 class="deal-title">{{$categories[1]->name }}</h6>
 									</div>
@@ -169,8 +169,8 @@
 						<div class="col-lg-4 col-md-4">
 							<div class="single-deal">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" style="height: 191px!important;" src="{{asset("")}}images_profile/{{$categories[2]->image }}" alt="">
-								<a href="{{asset("")}}images_profile/{{$categories[2]->image }}" class="img-pop-up" target="_blank">
+								<img class="img-fluid w-100" style="height: 191px!important;" src="{{asset("")}}main/img/category/c3.jpg" alt="">
+								<a href="{{asset("")}}main/img/category/c3.jpg" class="img-pop-up" target="_blank">
 									<div class="deal-details">
 										<h6 class="deal-title">{{$categories[2]->name }}</h6>
 									</div>
@@ -180,8 +180,8 @@
 						<div class="col-lg-8 col-md-8">
 							<div class="single-deal">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" style="height: 191px!important;" src="{{asset("")}}images_profile/{{$categories[3]->image }}" alt="">
-								<a href="{{asset("")}}images_profile/{{$categories[3]->image }}" class="img-pop-up" target="_blank">
+								<img class="img-fluid w-100" style="height: 191px!important;" src="{{asset("")}}main/img/category/c4.jpg" alt="">
+								<a href="{{asset("")}}main/img/category/c5.jpg" class="img-pop-up" target="_blank">
 									<div class="deal-details">
 										<h6 class="deal-title">{{$categories[3]->name }}</h6>
 									</div>
@@ -373,7 +373,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="" class="primary-btn">Shop Now</a>
+                    <a href="{{route('search')}}" class="primary-btn">Shop Now</a>
                 </div>
                 <div class="col-lg-6 no-padding exclusive-right">
                     <div class="active-exclusive-product-slider">

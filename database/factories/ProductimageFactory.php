@@ -6,9 +6,10 @@ use App\Model;
 use Faker\Generator as Faker;
 
 $factory->define(\App\Models\Productimage::class, function (Faker $faker) {
+    $item=$faker->unique()->numberBetween(1,100);
     return [
-        'image' => 'product.png',
-        'product_id' => $faker->unique()->numberBetween(1,100),
-
+        'id' => $item,
+        'image' => $item.'.png',
+        'product_id' => $item,
     ];
 });

@@ -16,7 +16,7 @@ Version      : 1.0
 7. Components
 8. Header
 9. Sidebar
-10. Content
+10. Content.owl-carousel .owl-item img
 11. Login
 12. Lock Screen
 13. Notifications
@@ -165,6 +165,12 @@ textarea.form-control {
 	text-rendering: optimizeLegibility;
 	-moz-osx-font-smoothing: grayscale;
 	font-feature-settings: 'liga';
+}
+.owl-carousel .owl-item img{
+    height: 130px!important;
+}
+.single-product img{
+    height: 130px!important;
 }
 .font-weight-600 {
 	font-weight: 600;
