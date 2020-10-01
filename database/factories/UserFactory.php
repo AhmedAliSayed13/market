@@ -20,11 +20,12 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(User::class, function (Faker $faker) {
+    $item=$faker->unique()->numberBetween(0,47);
     return [
-        'id' => $faker->unique()->numberBetween(1,25),
+        'id' => $item,
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'image' => 'user.png',
+        'image' => $item.'.jpg',
         'nid' => $faker->unique()->randomNumber(7),
         'email_verified_at' => now(),
         'password' => Hash::make('123456789'), // password

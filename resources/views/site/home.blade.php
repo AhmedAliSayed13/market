@@ -377,29 +377,20 @@
                 </div>
                 <div class="col-lg-6 no-padding exclusive-right">
                     <div class="active-exclusive-product-slider">
-                    @foreach($productFeatures as $productFeature)
+                    @foreach($brands as $brand)
                         <!-- single exclusive carousel -->
                         <div class="single-exclusive-slider">
-                            <img class="img-fluid" src="{{asset("")}}images_upload/{{$productFeature->defaultImage()}}" alt="">
+                            <img class="img-fluid" style="border-radius: 10px" src="{{asset("")}}images_profile/{{$brand->image}}" alt="">
                             <div class="product-details">
                                 <div class="price">
-                                    <h6>${{$productFeature->price}}</h6>
-                                    <h6 class="l-through">${{$productFeature->discount}}</h6>
+                                    <h6>{{$brand->about}}</h6>
+
                                 </div>
-                                <h4>{{show_title($productFeature->name) }}</h4>
-                                <form STYLE="display: inline" method="post" action="{{route('add.card')}}">
-                                    @csrf
-                                    <input name="id" type="hidden" value="{{$product->id}}">
-                                    <input name="name" type="hidden" value="{{ $product->name}}">
-                                    <input name="price" type="hidden" value="{{$product->price}}">
-                                    <input name="quantity" type="hidden" value="1">
+                                <h4>{{$brand->name }}</h4>
 
 
-                                <button style="margin-left: auto;margin-right:auto;cursor: pointer;text-align: left;background-color: transparent!important;border-color: transparent!important;" type="submit" class="add-bag d-flex align-items-center justify-content-center">
-                                    <b type="submit" class="add-btn" href=""><span class="ti-bag"></span></b>
-                                    <span class="add-text text-uppercase">Add to Bag</span>
-                                </button>
-                                </form>
+                                <a href="{{route('search')}}" class="primary-btn">Shop Now</a>
+
                             </div>
                         </div>
                         <!-- single exclusive carousel -->
@@ -411,20 +402,29 @@
     </section>
     <!-- End exclusive deal Area -->
 
-	<!-- Start brand Area -->
-	<section class="brand-area section_gap">
-		<div class="container">
-			<div class="row">
-                @foreach($brands as $brand)
-				<a class="col single-img" href="#">
-					<img class="img-fluid d-block mx-auto" src="{{asset("")}}images_profile/{{$brand->image}}" alt="">
-                    <h5 class="m-auto text-center" style="color: #ffba00">{{$brand->name}}</h5>
-				</a>
-				@endforeach
-			</div>
-		</div>
-	</section>
-	<!-- End brand Area -->
+    <!-- Start brand Area -->
+    <section class="brand-area section_gap">
+        <div class="container">
+            <div class="row">
+                <a class="col single-img" href="#">
+                    <img class="img-fluid d-block mx-auto" src="{{asset("")}}main/img/brand/1.png" alt="">
+                </a>
+                <a class="col single-img" href="#">
+                    <img class="img-fluid d-block mx-auto" src="{{asset("")}}main/img/brand/2.png" alt="">
+                </a>
+                <a class="col single-img" href="#">
+                    <img class="img-fluid d-block mx-auto" src="{{asset("")}}main/img/brand/3.png" alt="">
+                </a>
+                <a class="col single-img" href="#">
+                    <img class="img-fluid d-block mx-auto" src="{{asset("")}}main/img/brand/4.png" alt="">
+                </a>
+                <a class="col single-img" href="#">
+                    <img class="img-fluid d-block mx-auto" src="{{asset("")}}main/img/brand/5.png" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- End brand Area -->
 
 	<!-- Start related-product Area -->
 	<section class="related-product-area section_gap_bottom">
@@ -441,15 +441,20 @@
 			<div class="row">
 				<div class="col-lg-9">
 					<div class="row">
-                        @foreach($dealProducts as $dealProduct)
+                        @foreach($dealorders as $dealorder)
 						    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 							<div class="single-related-product d-flex">
-								<a href="#"><img width="70px" height="70px" src="{{asset("")}}images_upload/{{$dealProduct->defaultImage()}}" alt=""></a>
+                                @isset($dealorder->user['image'])
+                                    <>$image
+                                @endisset
+								<a href="#"><img width="70px" height="70px" src="{{asset("")}}images_upload/{{$dealorder->user}}" alt=""></a>
 								<div class="desc">
-									<a href="#" class="title">{{show_title($dealProduct->name) }}</a>
+{{--									<a href="#" class="title">{{show_title($dealProduct->name) }}</a>--}}
 									<div class="price">
-										<h6>${{$dealProduct->price}}</h6>
-										<h6 class="l-through">${{$dealProduct->discount}}</h6>
+                                        @isset($dealorder->user['image'])
+										<h6>${{$dealorder->user['image']}}</h6>
+                                        @endisset
+{{--										<h6 class="l-through">${{$dealProduct->discount}}</h6>--}}
 									</div>
 								</div>
 							</div>

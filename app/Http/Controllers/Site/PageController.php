@@ -20,10 +20,12 @@ class PageController extends Controller
         $mostSaleProducts=Product::orderBy('sale_count', 'desc')->get()->take(8);
         $comingProducts=Product::orderBy('created_at', 'asc')->get()->take(8);
         $brands=Brand::all()->random(5);
-        $dealProducts=Product::all()->random(9);
+        $dealorders=Order::where('user_id','!=',null)->take(9);
         $products=Product::all();
+//         $deal=Order::all();
+//        return $dealorders;
         $productFeatures=Product::where('feature','=',1)->get();
-        return view('site.home',compact('categories','productFeatures','mostSaleProducts','comingProducts','brands','dealProducts','products'));
+        return view('site.home',compact('categories','dealorders','mostSaleProducts','comingProducts','brands','dealProducts','products'));
     }
     public function single_product($id){
         $product=Product::find($id);
