@@ -1,30 +1,79 @@
+<!--================Login Box Area =================-->
+
+
+
+
+
+
+
+<!--================End Login Box Area =================-->
+
+
 
 <!-- Modal -->
+
 <div class="modal fade" id="loginModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
-            </div>
             <div class="modal-body">
-                <form  method="post">
-                <div class="col-md-12 form-group p_star">
-                    <input type="email" id="idemailLogin" required placeholder="email" class="form-control"  name="email">
-                    <span id="emailError" style="color: red"></span>
-                </div>
-                <div class="col-md-12 form-group p_star">
-                    <input type="password" id="idPasswordLogin" required placeholder="password" class="form-control"  name="password">
 
-                </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
-                <button onclick="PopUpLogin()" type="button" class="btn btn-primary">Save</button>
+                    <div class="login_form_inner">
+                        <h3>Log in to enter</h3>
+                        <form class="row login_form"  method="post" id="contactForm" novalidate="novalidate">
+                            <div class="col-md-12 form-group">
+                                <input class="form-control" type="email" id="idemailLogin" required placeholder="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input  type="password" id="idPasswordLogin" required placeholder="password" class="form-control"  name="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <div class="creat_account">
+                                    <input type="checkbox" id="f-option2" name="selector">
+                                    <label for="f-option2">Keep me logged in</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <button onclick="PopUpLogin()" type="button" class="primary-btn">Log In</button>
+
+{{--                                <button onclick="PopUpLogin()" type="button" class="btn btn-primary">Save</button>--}}
+                                <a href="{{url('/password/reset')}}">Forgot Password?</a>
+                            </div>
+                        </form>
+                    </div>
+
             </div>
         </div>
     </div>
 </div>
+
+
+
+{{--<div class="modal fade" id="loginModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
+{{--    <div class="modal-dialog modal-dialog-centered" role="document">--}}
+{{--        <div class="modal-content">--}}
+{{--            <div class="modal-header">--}}
+{{--                <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>--}}
+{{--            </div>--}}
+{{--            <div class="modal-body">--}}
+{{--                <form  method="post">--}}
+{{--                <div class="col-md-12 form-group p_star">--}}
+{{--                    <input type="email" id="idemailLogin" required placeholder="email" class="form-control"  name="email">--}}
+{{--                    <span id="emailError" style="color: red"></span>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-12 form-group p_star">--}}
+{{--                    <input type="password" id="idPasswordLogin" required placeholder="password" class="form-control"  name="password">--}}
+
+{{--                </div>--}}
+{{--                </form>--}}
+{{--            </div>--}}
+{{--            <div class="modal-footer">--}}
+{{--                <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>--}}
+{{--                <button onclick="PopUpLogin()" type="button" class="btn btn-primary">Save</button>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+
 <script>
     function addStar(ths,sno){
 

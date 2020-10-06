@@ -10,10 +10,10 @@ class Order extends Model
     {
         return $this->belongsTo(Shipping::class);
     }
-//    public function products()
-//    {
-//        return $this->belongsToMany(Product::class,'order_product');
-//    }
+    public function products()
+    {
+        return $this->belongsToMany(Product::class,'order_product');
+    }
     public function order_products()
     {
         return $this->hasMany(Order_product::class);

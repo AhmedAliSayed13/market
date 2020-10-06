@@ -441,22 +441,17 @@
 			<div class="row">
 				<div class="col-lg-9">
 					<div class="row">
-                        @foreach($dealorders as $dealorder)
+                        @foreach($dealProducts as $Product)
 						    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 							<div class="single-related-product d-flex">
-                                @isset($dealorder->user['image'])
-                                    <>$image
-                                @endisset
-								<a href="#"><img width="70px" height="70px" src="{{asset("")}}images_upload/{{$dealorder->user}}" alt=""></a>
-								<div class="desc">
-{{--									<a href="#" class="title">{{show_title($dealProduct->name) }}</a>--}}
-									<div class="price">
-                                        @isset($dealorder->user['image'])
-										<h6>${{$dealorder->user['image']}}</h6>
-                                        @endisset
-{{--										<h6 class="l-through">${{$dealProduct->discount}}</h6>--}}
-									</div>
-								</div>
+								<a href="#"><img width="70px" height="70px" src="{{asset("")}}images_upload/{{$Product->defaultImage()}}" alt=""></a>
+                                <div class="desc">
+                                    <a href="#" class="title">{{$Product->name}}</a>
+                                    <div class="price">
+                                        <h6>${{$Product->price}}</h6>
+                                        <h6 class="l-through">${{$Product->discount}}</h6>
+                                    </div>
+                                </div>
 							</div>
 						</div>
                         @endforeach

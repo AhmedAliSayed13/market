@@ -20,16 +20,16 @@ class PageController extends Controller
         $mostSaleProducts=Product::orderBy('sale_count', 'desc')->get()->take(8);
         $comingProducts=Product::orderBy('created_at', 'asc')->get()->take(8);
         $brands=Brand::all()->random(5);
-        $dealorders=Order::where('user_id','!=',null)->take(9);
+//        $dealorders=Order::where('user_id','!=',null)->take(9);
         $products=Product::all();
-//         $deal=Order::all();
-//        return $dealorders;
-        $productFeatures=Product::where('feature','=',1)->get();
-        return view('site.home',compact('categories','dealorders','mostSaleProducts','comingProducts','brands','dealProducts','products'));
+        $dealProducts=Product::get()->random(9);
+
+        return view('site.home',compact('categories','dealProducts','mostSaleProducts','comingProducts','brands','dealProducts','products'));
     }
     public function single_product($id){
         $product=Product::find($id);
         $comments=$product->comments;
+
         return view('site.single-product',compact('product','comments'));
     }
     public function wishlist($id){
@@ -59,7 +59,8 @@ class PageController extends Controller
         $categories=Category::take(7)->get();
         $brands=Brand::take(7)->get();
         $products=Product::paginate(9);
-        return view('site.search',compact('categories','brands','products'));
+        $dealProducts=Product::get()->random(9);
+        return view('site.search',compact('dealProducts','categories','brands','products'));
     }
     public function contact(){
         return view('site.contact');

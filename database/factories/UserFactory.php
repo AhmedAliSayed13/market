@@ -20,7 +20,7 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(User::class, function (Faker $faker) {
-    $item=$faker->unique()->numberBetween(0,47);
+    $item=$faker->unique()->numberBetween(1,47);
     return [
         'id' => $item,
         'name' => $faker->name,

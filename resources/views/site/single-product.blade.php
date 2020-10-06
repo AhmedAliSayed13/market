@@ -25,7 +25,11 @@
                 <div class="col-lg-6">
                     <div class="s_Product_carousel">
                         @foreach($product->images as $imageItem)
+{{--                            <h1>{{$imageItem->image}}</h1>--}}
                         <div class="single-prd-item">
+                            <img class="img-fluid" src="{{asset('')}}images_upload/{{$imageItem->image}}" alt="">
+                        </div>
+                            <div class="single-prd-item">
                             <img class="img-fluid" src="{{asset('')}}images_upload/{{$imageItem->image}}" alt="">
                         </div>
                         @endforeach

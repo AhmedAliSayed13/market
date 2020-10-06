@@ -5684,7 +5684,10 @@ label {
     overflow: hidden;
     width: 25%; }
     .instafeed li img {
-      margin: 5px; }
+      margin: 5px;
+    width: 58px!important;
+        height: 58px!important;
+    }
 
 .footer-social a {
   padding-right: 25px;
