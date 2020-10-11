@@ -444,7 +444,7 @@
                         @foreach($dealProducts as $Product)
 						    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 							<div class="single-related-product d-flex">
-								<a href="#"><img width="70px" height="70px" src="{{asset("")}}images_upload/{{$Product->defaultImage()}}" alt=""></a>
+								<a href="#"><img width="60px" height="60px" src="{{asset("")}}images_upload/{{$Product->defaultImage()}}" alt=""></a>
                                 <div class="desc">
                                     <a href="#" class="title">{{$Product->name}}</a>
                                     <div class="price">

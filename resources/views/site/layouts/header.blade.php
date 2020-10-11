@@ -15,18 +15,20 @@
                     <ul class="nav navbar-nav menu_nav ml-auto">
                         <li class="nav-item {{active_link([''])}}"><a class="nav-link" href="{{route('home')}}">Home</a></li>
                         <li class="nav-item {{active_link(['search'])}}"><a class="nav-link" href="{{route('search')}}">Search</a></li>
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                               aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
-                                <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
-                                <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-                                <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
-                                <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
+{{--                        <li class="nav-item submenu dropdown">--}}
+{{--                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"--}}
+{{--                               aria-expanded="false">Shop</a>--}}
+{{--                            <ul class="dropdown-menu">--}}
+{{--                                <li class="nav-item"><a class="nav-link" href="{{route('list-category')}}">Shop Category</a></li>--}}
+{{--                                <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>--}}
+{{--                                <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>--}}
+{{--                                <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>--}}
+{{--                                <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
+                        <li class="nav-item {{active_link(['list-category'])}}"><a class="nav-link" href="{{route('list-category')}}">Shop Category</a></li>
+                        <li class="nav-item {{active_link(['about'])}}"><a class="nav-link" href="{{route('about')}}">About</a></li>
+                        <li class="nav-item {{active_link(['contact'])}}"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
                         @if(Auth::check())
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"

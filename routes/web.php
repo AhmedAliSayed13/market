@@ -22,6 +22,8 @@ Route::group(['prefix'  =>  'ajax'], function () {
 
 
 Route::get('/', 'Site\PageController@home')->name('home');
+Route::get('/list-category', 'Site\PageController@listCategory')->name('list-category');
+Route::get('/about', 'Site\PageController@about')->name('about');
 
 Route::get('/single-product/{id}', 'Site\PageController@single_product')->name('single-product');
 Route::get('/confirmation/{id}', 'Site\PageController@confirmation')->name('confirmation');

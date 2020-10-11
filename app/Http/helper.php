@@ -35,5 +35,14 @@ if(!function_exists('show_title')){
 
     }
 }
+if(!function_exists('show_describe')){
+    function show_describe($title){
+        if(strlen($title)>70){
+            return str_limit($title, $limit = 70, $end = '...');
+        }
+        return $title;
+
+    }
+}
 
 

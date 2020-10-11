@@ -93,5 +93,12 @@ class PageController extends Controller
 //       return $cards;
          return view('site.card-page',compact('cards','condition','conditionCoupon'));
     }
+    public function listCategory(){
+        $categories=Category::all();
+         return view('site.category',compact('categories'));
+    }
+    public function about(){
+        return view('site.about');
+    }
 
 }
