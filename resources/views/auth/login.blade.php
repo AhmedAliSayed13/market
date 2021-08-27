@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{asset('site/plugins/fontawesome/css/all.min.css')}}">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{asset('site/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 
 </head>
 <body class="account-page">
@@ -30,53 +30,60 @@
                     <!-- Login Tab Content -->
                     <div class="account-content">
                         <div class="row align-items-center justify-content-center">
-                            <div class="col-md-7 col-lg-6 login-left">
+                            {{--  <div class="col-md-7 col-lg-6 login-left">
                                 <img src="{{asset('site/img/login-banner.png')}}" class="img-fluid" alt="Doccure Login">
-                            </div>
+                            </div>  --}}
                             <div class="col-md-12 col-lg-6 login-right">
                                 @include('admin.layout.message')
-                                <div class="login-header">
-                                    <h3>Login <span>Doccure</span></h3>
+                                <div class="login-header text-center bold">
+                                    <h3>انشاء حساب دافنشي</h3>
                                 </div>
 
                                 <form action="{{ route('login') }}" method="post">
                                     @csrf
                                     <div class="form-group form-focus">
-                                        <input id="email" type="email" value="{{ old('email') }}" name="email" class="form-control floating @error('email') is-invalid @enderror">
-                                        <label class="focus-label">Email</label>
+                                    <div class="input-wrapper">
+                                        <input id="email" type="email" value="{{ old('email') }}" name="email" class="form-control floating @error('email') is-invalid @enderror login-form2" placeholder="البريد الالكتروني">
+                                        <label for="stuff" class="fa fa-user input-icon"></label>
                                         @error('email')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
+                                    </div>
                                     <div class="form-group form-focus">
-                                        <input type="password" name="password" id="password" class="form-control floating @error('password') is-invalid @enderror">
-                                        <label class="focus-label">Password</label>
+                                    <div class="input-wrapper">
+                                        <input type="password" name="password" id="password" class="form-control floating @error('password') is-invalid @enderror login-form2" placeholder="كلمة المرور">
+                                        <label for="stuff" class="fa fa-lock input-icon"></label>
                                         @error('password')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                    <div class="text-left  float-left col-6">
-                                         <input id="remember" name="remember" CLASS="mr-2" type="checkbox">Remember Me
                                     </div>
+
+
                                     <div class="text-right float-left col-6">
-                                        <a class="forgot-link" href="{{ route('password.request') }}">Forgot Password ?</a>
+                                        <a class="forgot-link" href="{{ route('password.request') }}">هل نسيت كلمة المرور؟</a>
                                     </div>
 
-
-                                    <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Login</button>
+                                    <button class="btn btn-primary btn-block btn-lg login-btn login-form2" type="submit">تسجيل دخول</button>
                                     <div class="login-or">
                                         <span class="or-line"></span>
-                                        <span class="span-or">or</span>
+                                        <span class="span-or">او</span>
                                     </div>
-                                    <div class="row form-row social-login">
-                                        <div class="col-6">
-                                            <a href="{{url('/login/google')}}" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i> Login</a>
-                                        </div>
-                                        <div class="col-6">
-                                            <a href="{{url('/login/github')}}" class="btn btn-google  btn-block" style="background-color: #444d56;color: white"><i class="fab fa-github mr-1"></i> Login</a>
-                                        </div>
+                                    <div class="col-12 ">
+                                        <a href="{{url('/login/google')}}" class="btn btn-primary btn-block  btn-lg login-form2"><i class="fab fa-facebook mr-1"></i> تسجيل الدخول بواسطة فيسبوك</a>
                                     </div>
-                                    <div class="text-center dont-have">Don’t have an account? <a href="{{route('register')}}">Register</a></div>
+
+
+                                    <div class="col-12 mt-3">
+                                        <a href="{{url('/login/google')}}" class="btn btn-google btn-block  btn-lg login-form2"><i class="fab fa-google mr-1"></i>تسجيل الدخول بواسطة جوجل</a>
+                                    </div>
+
+                                    <div class="login-or">
+                                        <span class="or-line"></span>
+                                        <span class="span-or2">ليس لديك حساب في فينيشي</span>
+                                    </div>
+                                    <a <a href="{{route('register')}}" class="btn btn-primary btn-block  btn-lg login-form2">  انشاء حساب فينشي؟ </a>
                                 </form>
                             </div>
                         </div>

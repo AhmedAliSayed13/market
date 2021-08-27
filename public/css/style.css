@@ -486,7 +486,7 @@ button.bg-danger:hover {
     border-color: #00d0f1!important;
 }
 .btn-primary {
-	background-color: #00d0f1;
+	background-color: #005fa5;
     border: 1px solid #00d0f1;
 }
 .btn-primary:hover,
@@ -2135,6 +2135,17 @@ html.menu-opened body {
 	text-transform: uppercase;
 	top: 0;
 	width: 42px;
+}
+.span-or2 {
+	background-color: #fff;
+	display: block;
+	left: 50%;
+	margin-left: -20px;
+	position: absolute;
+	text-align: center;
+	text-transform: uppercase;
+	top: 0;
+	width: 170px;
 }
 
 /*-----------------
@@ -4228,4 +4239,27 @@ table.table-inbox tbody tr.checked {
 }
 .page-item.disabled .page-link{
     height: 100%;
+}
+.login-form2{
+    height: 44px  !important;
+margin: 0 auto !important;
+border: none !important;
+border: solid 1px #ccc !important;
+border-radius: 36px !important;
+}
+
+.input-icon{
+    position: absolute;
+    right: 3px;
+    top: calc(50% - 0.5em); /* Keep icon in center of input, regardless of the input height */
+  }
+  input{
+    padding-left: 17px;
+  }
+  .input-wrapper{
+    position: relative;
+  }
+.forgot-link{
+    color: rgb(187, 186, 186);
+    font-size: 24px;
 }
