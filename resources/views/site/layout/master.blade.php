@@ -1,0 +1,11 @@
+@include('site.includes.head')
+@yield('custom-style')
+</head>
+<body>
+@include('site.includes.navbar')
+@yield('content')
+@include('site.includes.footer')
+@include('site.includes.script')
+@yield('scripts')
+</body>
+</html>
