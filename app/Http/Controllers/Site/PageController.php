@@ -26,6 +26,15 @@ class PageController extends Controller
 
         return view('site.home',compact('categories','dealProducts','mostSaleProducts','comingProducts','brands','dealProducts','products'));
     }
+
+    public function product_details($id){
+        // $product=Product::find($id);
+        return view('site.pages.product_details');
+    }
+
+    public function products(){
+        return view('site.pages.products');
+    }
     public function single_product($id){
         $product=Product::find($id);
         $comments=$product->comments;

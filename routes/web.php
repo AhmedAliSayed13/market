@@ -22,6 +22,9 @@ Route::group(['prefix'  =>  'ajax'], function () {
 
 
 Route::get('/', 'Site\PageController@home')->name('home');
+Route::get('/product-details/{id}', 'Site\PageController@product_details')->name('front.product-details');
+Route::get('/products', 'Site\PageController@products')->name('front.products');
+
 Route::get('/list-category', 'Site\PageController@listCategory')->name('list-category');
 Route::get('/about', 'Site\PageController@about')->name('about');
 
