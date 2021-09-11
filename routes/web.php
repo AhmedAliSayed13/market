@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Support\Facades\Route;
+
 Auth::routes();
 
 Route::group(['prefix'  =>  'ajax'], function () {
@@ -24,6 +27,26 @@ Route::group(['prefix'  =>  'ajax'], function () {
 Route::get('/', 'Site\PageController@home')->name('home');
 Route::get('/product-details/{id}', 'Site\PageController@product_details')->name('front.product-details');
 Route::get('/products', 'Site\PageController@products')->name('front.products');
+Route::post('/cart-coupon', 'Site\CartController@cart_coupon')->name('cart.coupon');
+Route::post('/cart-condation-update', 'Site\CartController@cartCondationUpdate')->name('cart.condation.update');
+Route::post('/add-cart', 'Site\CartController@addCart')->name('add.card');
+Route::get('/empty-cart', 'Site\CartController@emptyCart')->name('empty.card');
+Route::post('/update-cart', 'Site\CartController@updateCart')->name('update.card');
+Route::get('/remove-card/{id}', 'Site\CartController@removeCart')->name('remove.card');
+Route::get('/cart', 'Site\CartController@getCart')->name('site.cart');
+
+
+Route::get('/checkout/add-address', 'Site\CheckoutController@add_address')->name('checkout.add_address');
+
+Route::get('checkout/create-step-one', 'Site\CheckoutController@createStepOne')->name('checkout.create_step_one')->middleware('auth');
+// Route::post('products/create-step-one', 'ProductController@postCreateStepOne')->name('products.create.step.one.post');
+
+// Route::get('products/create-step-two', 'ProductController@createStepTwo')->name('products.create.step.two');
+// Route::post('products/create-step-two', 'ProductController@postCreateStepTwo')->name('products.create.step.two.post');
+
+// Route::get('products/create-step-three', 'ProductController@createStepThree')->name('products.create.step.three');
+// Route::post('products/create-step-three', 'ProductController@postCreateStepThree')->name('products.create.step.three.post');
+
 
 Route::get('/list-category', 'Site\PageController@listCategory')->name('list-category');
 Route::get('/about', 'Site\PageController@about')->name('about');
@@ -31,13 +54,7 @@ Route::get('/about', 'Site\PageController@about')->name('about');
 Route::get('/single-product/{id}', 'Site\PageController@single_product')->name('single-product');
 Route::get('/confirmation/{id}', 'Site\PageController@confirmation')->name('confirmation');
 
-Route::post('/cart-coupon', 'Site\CartController@cart_coupon')->name('cart.coupon');
-Route::post('/cart-condation-update', 'Site\CartController@cartCondationUpdate')->name('cart.condation.update');
-Route::post('/add-cart', 'Site\CartController@addCart')->name('add.card');
-Route::get('/empty-cart', 'Site\CartController@emptyCart')->name('empty.card');
-Route::post('/update-cart', 'Site\CartController@updateCart')->name('update.card');
-Route::get('/remove-card/{id}', 'Site\CartController@removeCart')->name('remove.card');
-Route::get('/cart', 'Site\CartController@getCart')->name('checkout.cart');
+
 
 Route::get('/cart/item/{id}/remove', 'Site\CartController@removeItem')->name('checkout.cart.remove');
 Route::get('/cart/clear', 'Site\CartController@clearCart')->name('checkout.cart.clear');

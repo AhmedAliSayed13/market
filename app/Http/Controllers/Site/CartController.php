@@ -14,7 +14,7 @@ class CartController extends Controller
 {
     public function getCart()
     {
-        return view('site.pages.cart');
+        return view('site.pages.cart.cart');
     }
     public function addCart(Request $request)
     {
@@ -126,7 +126,6 @@ class CartController extends Controller
         $condition = Cart::getCondition('shipping');
         return redirect()->back()->with('condition', $condition);
     }
-
     public function cart_coupon(Request $request){
         $coupon=Voucher::where('code','=',$request->code)->first();
         if(empty($coupon)){

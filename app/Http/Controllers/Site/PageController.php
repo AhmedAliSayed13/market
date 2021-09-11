@@ -35,6 +35,7 @@ class PageController extends Controller
     public function products(){
         return view('site.pages.products');
     }
+   
     public function single_product($id){
         $product=Product::find($id);
         $comments=$product->comments;
