@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="utf-8">
     <title>Doccure</title>
@@ -9,7 +9,8 @@
     <link href="{{asset('site/img/favicon.png')}}" rel="icon">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('site/css/bootstrap.min.css')}}">
+    {{--  <link rel="stylesheet" href="{{asset('site/css/bootstrap.min.css')}}">  --}}
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css">
 
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="{{asset('site/plugins/fontawesome/css/fontawesome.min.css')}}">
@@ -36,7 +37,7 @@
                             <div class="col-md-12 col-lg-6 login-right">
                                 @include('admin.layout.message')
                                 <div class="login-header text-center bold">
-                                    <h3>انشاء حساب دافنشي</h3>
+                                    <h3 class="dafenshe_login">مرحبا بكم في دافنشي</h3>
                                 </div>
 
                                 <form action="{{ route('login') }}" method="post">
@@ -102,8 +103,9 @@
 
 <!-- Bootstrap Core JS -->
 <script src="{{asset('site/js/popper.min.js')}}"></script>
-<script src="{{asset('site/js/bootstrap.min.js')}}"></script>
-
+{{--  <script src="{{asset('site/js/bootstrap.min.js')}}"></script>  --}}
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://cdn.rtlcss.com/bootstrap/v4.5.3/js/bootstrap.min.js"></script>
 <!-- Custom JS -->
 <script src="{{asset('site/js/script.js')}}"></script>
 

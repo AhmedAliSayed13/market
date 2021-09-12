@@ -4250,8 +4250,9 @@ border-radius: 36px !important;
 
 .input-icon{
     position: absolute;
-    right: 3px;
+    right: 14px;
     top: calc(50% - 0.5em); /* Keep icon in center of input, regardless of the input height */
+    font-size: 16px;
   }
   input{
     padding-left: 17px;
@@ -4262,4 +4263,7 @@ border-radius: 36px !important;
 .forgot-link{
     color: rgb(187, 186, 186);
     font-size: 24px;
+}
+.dafenshe_login{
+    color: #5191c1;
 }
