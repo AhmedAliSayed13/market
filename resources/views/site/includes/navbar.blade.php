@@ -41,7 +41,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-xl-5 col-lg-5 col-sm-2 large-items">
+            <div class="col-5 large-items">
 
                 <div class="nav-icon save-products">
                     <a href="account_favorite.html">
@@ -68,7 +68,7 @@
     </div>
 </div>
 
-<div class="bottom-header">
+<div class="bottom-header sticky-top">
     <div class="container-fluid">
         <ul>
             <li>
