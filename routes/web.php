@@ -37,8 +37,8 @@ Route::get('/cart', 'Site\CartController@getCart')->name('site.cart');
 
 
 Route::get('/checkout/add-address', 'Site\CheckoutController@add_address')->name('checkout.add_address');
-
-Route::get('checkout/create-step-one', 'Site\CheckoutController@createStepOne')->name('checkout.create_step_one')->middleware('auth');
+Route::get('checkout/create-step-one', 'Site\CheckoutController@createStepOne')->name('checkout.create_step_one');
+Route::get('checkout/success-checkout', 'Site\CheckoutController@successCheckout')->name('checkout.success_checkout');
 // Route::post('products/create-step-one', 'ProductController@postCreateStepOne')->name('products.create.step.one.post');
 
 // Route::get('products/create-step-two', 'ProductController@createStepTwo')->name('products.create.step.two');

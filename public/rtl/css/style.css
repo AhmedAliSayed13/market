@@ -1113,3 +1113,70 @@ color: #717171;
     color: #fcb813;
     margin-left: 10px;
 }
+.body-steps .address-section.all-address .body{
+    background: #FFF;
+    padding: 20px;
+    box-shadow: 0 0 6px rgb(0 0 0 / 20%);
+    border-radius: 0 0 10px 10px;
+}
+.body-steps .address-section.all-address .body  .action {
+    text-align: end;
+}
+.body-steps .address-section.all-address .body .action a{
+    font-size: 17px;
+    margin: 0 5px;
+}
+.body-steps .address-section.all-address .body table tr label{
+    font-size: 14px;
+}
+.body-steps .address-section.all-address .body table tr input[type="radio"]{
+    cursor: pointer;
+}
+.body-steps .address-section.all-address .body  .btn{
+    width: 135px;
+    background: #4264a5;
+    border: 1px solid #4264a5;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 17px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+.body-steps .address-section.all-address .body .btn:focus{
+    outline: 0;
+    box-shadow: none;
+    border:1px solid #4264a5;
+}
+.cart-page .success-summery img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 9px solid #72c94a;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.cart-page .success-summery p{
+    font-size: 14px;
+    margin: 0 0 5px;
+}
+.cart-page .success-summery .table-layout{
+    margin: auto;
+    width: 80%;
+    text-align: initial;
+}
+.cart-page .success-summery span{
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: block;
+}
+.cart-page .success-summery table{
+    font-size: 14px;
+}
+.cart-page .success-summery .table-bordered td,
+.cart-page .success-summery .table-bordered th {
+    border: 1px solid #9b9b9b ;
+}
+

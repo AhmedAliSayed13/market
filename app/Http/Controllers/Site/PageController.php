@@ -16,15 +16,15 @@ use Illuminate\Support\Facades\Auth;
 class PageController extends Controller
 {
     public function home(){
-        $categories=Category::all()->random(4);
-        $mostSaleProducts=Product::orderBy('sale_count', 'desc')->get()->take(8);
-        $comingProducts=Product::orderBy('created_at', 'asc')->get()->take(8);
-        $brands=Brand::all()->random(5);
+        // $categories=Category::all()->random(4);
+        // $mostSaleProducts=Product::orderBy('sale_count', 'desc')->get()->take(8);
+        // $comingProducts=Product::orderBy('created_at', 'asc')->get()->take(8);
+        // $brands=Brand::all()->random(5);
 //        $dealorders=Order::where('user_id','!=',null)->take(9);
-        $products=Product::all();
-        $dealProducts=Product::get()->random(9);
+        // $products=Product::all();
+        // $dealProducts=Product::get()->random(9);
 
-        return view('site.home',compact('categories','dealProducts','mostSaleProducts','comingProducts','brands','dealProducts','products'));
+        return view('site.home');
     }
 
     public function product_details($id){
@@ -35,7 +35,7 @@ class PageController extends Controller
     public function products(){
         return view('site.pages.products');
     }
-   
+
     public function single_product($id){
         $product=Product::find($id);
         $comments=$product->comments;

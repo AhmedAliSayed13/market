@@ -14,4 +14,7 @@ class CheckoutController extends Controller
     public function add_address(){
         return view('site.pages.cart.add_address');
     }
+    public function successCheckout(){
+        return view('site.pages.cart.success_checkout');
+    }
 }

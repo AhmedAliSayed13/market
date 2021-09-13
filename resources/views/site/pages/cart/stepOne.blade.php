@@ -20,16 +20,61 @@
                     <div class="body-steps">
                         <div class="row">
 
-                            <div class="col-8 address-section">
+                            <div class="col-8 address-section all-address">
                                 <div class="header">
                                     <i class="fa fa-truck"></i>
                                     معلومات الشحن
                                 </div>
-                                {{-- <div class="no-address text-center">
-                                    <a href="{{ route('checkout.add_address') }}"><i class="fa fa-plus"></i></a>
-                                    <p>لا يوجد عناوين  مسجلة للمستخدم</p>
-                                </div> --}}
-                                
+                                <div class="body">
+                                    <h6>العناوين المتاحة</h6>
+                                    <table  class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="radio" name="address">
+                                                    <label for="">مصر الجديده - شيراتون العاشر من رمضان شارع ال 90 5 </label>
+                                                </td>
+                                                <td class="action">
+                                                    <a href=""><i class="fa fa-pencil text-warning"></i></a>
+                                                    <a href=""><i class="fa fa-remove text-danger"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="radio" name="address">
+                                                    <label for="">مصر الجديده - شيراتون العاشر من رمضان شارع ال 90 5 </label>
+                                                </td>
+                                                <td class="action">
+                                                    <a href=""><i class="fa fa-pencil text-warning"></i></a>
+                                                    <a href=""><i class="fa fa-remove text-danger"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="radio" name="address">
+                                                    <label for="">مصر الجديده - شيراتون العاشر من رمضان شارع ال 90 5 </label>
+                                                </td>
+                                                <td class="action">
+                                                    <a href=""><i class="fa fa-pencil text-warning"></i></a>
+                                                    <a href=""><i class="fa fa-remove text-danger"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="radio" name="address">
+                                                    <label for="">مصر الجديده - شيراتون العاشر من رمضان شارع ال 90 5 </label>
+                                                </td>
+                                                <td class="action">
+                                                    <a href=""><i class="fa fa-pencil text-warning"></i></a>
+                                                    <a href=""><i class="fa fa-remove text-danger"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <a href="{{ route('checkout.add_address') }}" class="btn btn-primary mb-3"> اضافة عنوان اخر</a>
+                                </div>
+
 
                             </div>
                             <div class="col-4 summery">
@@ -61,6 +106,8 @@
                                 </div>
                                 <hr>
                                 <p class="total">الاجمالى : 6660 <span>جنية </span></p>
+                                <a href="{{ route('checkout.success_checkout') }}" class="btn btn-primary">تنفيذ الطلب </a>
+
                             </div>
                         </div>
                     </div>
